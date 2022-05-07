@@ -21,7 +21,7 @@ class PharmacyRepository implements IPharmacyRepository {
   @override
   Future<List<PharmacyListPharmacies?>> getAllPharmacies() async {
     final pharmacyList = PharmacyList.fromJson(
-      jsonDecode(await rootBundle.loadString('data/jsonModels/pharmacy_list.json'))
+      jsonDecode(await rootBundle.loadString('assets/data/pharmacy_list.json'))
           as Map<String, dynamic>,
     );
 
@@ -31,7 +31,7 @@ class PharmacyRepository implements IPharmacyRepository {
   @override
   Future<PharmacyDetails> getPharmacyDetails(String pharmacyId) async {
     final response =
-        await get(Uri.parse('https://api-qa-demo.nimbleandsimple.com/pharmacies/info/NRxPh-HLRS'));
+        await get(Uri.parse('https://api-qa-demo.nimbleandsimple.com/pharmacies/info/$pharmacyId'));
 
     return PharmacyDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   }
