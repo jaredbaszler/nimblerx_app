@@ -1,3 +1,4 @@
+// TODO: consider a cleaner model generation and then make it
 class PharmacyListPharmacies {
 /*
 {
@@ -50,7 +51,7 @@ class PharmacyList {
       pharmacies = arr0;
     }
   }
-  List<PharmacyListPharmacies?>? pharmacies;
+  List<PharmacyListPharmacies>? pharmacies;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
@@ -58,7 +59,7 @@ class PharmacyList {
       final v = pharmacies;
       final arr0 = <dynamic>[];
       for (final v in v!) {
-        arr0.add(v!.toJson());
+        arr0.add(v.toJson());
       }
       data['pharmacies'] = arr0;
     }
