@@ -1,4 +1,3 @@
-// TODO: consider a cleaner model generation and then make it
 class PharmacyListPharmacies {
 /*
 {
@@ -9,20 +8,24 @@ class PharmacyListPharmacies {
   PharmacyListPharmacies({
     this.name,
     this.pharmacyId,
+    this.medsOrdered = false,
   });
 
   PharmacyListPharmacies.fromJson(Map<String, dynamic> json) {
     name = json['name']?.toString();
     pharmacyId = json['pharmacyId']?.toString();
+    medsOrdered = false;
   }
 
   String? name;
   String? pharmacyId;
+  bool? medsOrdered;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['name'] = name;
     data['pharmacyId'] = pharmacyId;
+    data['medsOrdered'] = medsOrdered;
     return data;
   }
 }

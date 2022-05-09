@@ -49,6 +49,7 @@ class PharmacyDetails {
     this.details,
     this.generatedTs,
     this.pharmacyDetailInfo,
+    this.orderedMedList = '',
   });
   PharmacyDetails.fromJson(Map<String, dynamic> json) {
     responseCode = json['responseCode']?.toString();
@@ -65,6 +66,7 @@ class PharmacyDetails {
   String? details;
   String? generatedTs;
   PharmacyDetailInfo? pharmacyDetailInfo;
+  String? orderedMedList;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
