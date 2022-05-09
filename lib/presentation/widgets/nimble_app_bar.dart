@@ -7,11 +7,14 @@ class NimbleAppBar extends StatelessWidget implements PreferredSizeWidget {
   AppBar build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      title: Center(
-        child: SizedBox(
-          width: 150,
-          height: kToolbarHeight,
-          child: Image.asset('assets/images/nimblerx_logo.png'),
+      toolbarHeight: 150,
+      flexibleSpace: Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: Center(
+          child: SizedBox(
+            width: 150,
+            child: Image.asset('assets/images/nimblerx_logo.png'),
+          ),
         ),
       ),
       backgroundColor: Colors.white,
